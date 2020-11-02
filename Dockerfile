@@ -10,8 +10,10 @@ ARG JAR_FILE=target/spring-boot-test.jar
 # cd /opt/app
 WORKDIR /opt/app
 
+EXPOSE 8080
+
 # cp target/spring-boot-web.jar /opt/app/app.jar
 COPY ${JAR_FILE} spring-boot-test.jar
 
 # java -jar /opt/app/app.jar
-ENTRYPOINT ["java","-jar","spring-boot-docker.jar"]
+ENTRYPOINT ["java","-jar","spring-boot-test.jar"]
